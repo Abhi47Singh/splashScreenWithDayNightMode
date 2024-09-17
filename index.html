@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <center>
+            <h1>Heading</h1>
+        </center>
+        <br>
+        <hr>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veritatis, sed delectus tenetur aliquid placeat
+            ipsam commodi nihil inventore illo maxime hic doloribus, corrupti porro soluta ut, fuga laboriosam
+            assumenda.</p>
+        <center>
+
+            <button id="switchMode">Night Mode</button>
+        </center>
+    </div>
+    <script>
+        const btnText = ["Day Mode","Night Mode"];
+        const btn = document.getElementById("switchMode")
+        btn.addEventListener("click", (e)=> {
+            btn.innerText = (btn.innerText === btnText[0]) ? btnText[1] : btnText[0];
+            document.body.classList.toggle("active")
+        })
+
+        const splash = document.createElement('div')
+        splash.innerText = "Loading..."
+        splash.style.fontSize = "50px";
+        splash.style.fontWeight = "700";
+        splash.className = "splash"
+        document.body.appendChild(splash)
+
+        splash.style.visibility = "visible"
+        const ss = setTimeout(()=> {
+            splash.remove()
+            document.body.style.visibility = "visible"
+        },1500)
+
+    </script>
+</body>
+
+</html>
