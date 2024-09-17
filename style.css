@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    overflow-y: hidden;
 }
 
 body {
@@ -43,25 +44,8 @@ p {
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.45),
         inset -2px -2px 10px rgba(0, 0, 0, 0.45);
     padding-left: 60px;
+    -webkit-tap-highlight-color: transparent;
 }
-
-/* @keyframes shake {
-    0% {
-        left: 0;
-    }
-    25% {
-        left: 80%;
-    }
-    50% {
-        left: 0;
-    }
-    75% {
-        left: 80%;
-    }
-    100% {
-        left: 10px;
-    }
-} */
 
 #switchMode::after {
     content: "";
@@ -82,9 +66,6 @@ p {
     scale: 0.9;
 }
 
-/* #switchMode:hover::after {
-    animation: shake 2s ease-in-out infinite;
-} */
 body.active {
     --primary-txt-color: rgb(255, 255, 255);
     --primary-bg: #212121;
@@ -118,22 +99,26 @@ body.active #switchMode {
     align-items: center;
     z-index: 100;
     overflow: hidden;
-    animation: ss 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); /* Smooth animation and ensure final state is kept */
+    animation: ss 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    /* Smooth animation and ensure final state is kept */
 }
 
 @keyframes ss {
     0% {
-        font-size: 100px;
-        filter: blur(0); /* Ensure no blur initially */
+        font-size: 10vw;
+        filter: blur(0);
+        /* Ensure no blur initially */
     }
 
     50% {
-        font-size: 200px;
-        filter: blur(2px); /* No blur at 50% */
+        font-size: 15vw;
+        filter: blur(0.5px);
+        /* No blur at 50% */
     }
 
     100% {
-        font-size: 400px;
-        filter: blur(5px); /* End with blur */
+        font-size: 25vw;
+        filter: blur(5px);
+        /* End with blur */
     }
 }

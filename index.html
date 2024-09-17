@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Splash Screen + Day/Night Theme</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,14 +20,13 @@
             ipsam commodi nihil inventore illo maxime hic doloribus, corrupti porro soluta ut, fuga laboriosam
             assumenda.</p>
         <center>
-
             <button id="switchMode">Night Mode</button>
         </center>
     </div>
     <script>
-        const btnText = ["Day Mode","Night Mode"];
+        const btnText = ["Day Mode", "Night Mode"];
         const btn = document.getElementById("switchMode")
-        btn.addEventListener("click", (e)=> {
+        btn.addEventListener("click", (e) => {
             btn.innerText = (btn.innerText === btnText[0]) ? btnText[1] : btnText[0];
             document.body.classList.toggle("active")
         })
@@ -40,10 +39,10 @@
         document.body.appendChild(splash)
 
         splash.style.visibility = "visible"
-        const ss = setTimeout(()=> {
+        const ss = setTimeout(() => {
             splash.remove()
             document.body.style.visibility = "visible"
-        },1500)
+        }, 1500)
 
     </script>
 </body>
